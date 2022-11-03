@@ -1,0 +1,15 @@
+@use '../utils/mixins.scss' as *;
+
+main.root {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../assets/images/bg-header-desktop.png);
+    background-repeat: no-repeat !important;
+    background-size: 100% auto !important;
+
+    font-family: var(--ff-primary);
+
+    @include breakpoint(mobile, md) {
+        background: url(../assets/images/bg-header-mobile.png);
+    }
+}

@@ -1,0 +1,187 @@
+@use '../utils/mixins.scss' as *;
+
+.main-container {
+    position: relative;
+    margin: 0 auto 10rem;
+    width: min(1110px, 90%);
+    height: auto;
+
+    section {
+        position: relative;
+        width: 100%;
+        .section-header {
+            width: min(700px, 100%);
+            margin: auto;
+            text-align: center;
+            margin-bottom: 6rem;
+
+            @include breakpoint(mobile, md) {
+                margin-bottom: 3rem;
+            }
+
+            h2 {
+                margin-bottom: 0.75rem;
+                color: var(--c-neutral-600);
+                font-size: var(--fs-800);
+                font-weight: 600;
+            }
+
+            p {
+                color: var(--c-neutral-250);
+                font-size: var(--fs-400);
+            }
+        }
+
+        .section-body {
+            article {
+                display: flex;
+                gap: 3.25rem 1rem;
+
+                @include breakpoint(mobile, sm) {
+                    gap: 2rem 1rem;
+                }
+
+                img {
+                    margin: 0 auto 1rem;
+                }
+                h3 {
+                    color: var(--c-neutral-800);
+                    font-size: var(--fs-600);
+                }
+                p {
+                    color: var(--c-neutral-250);
+                    font-size: var(--fs-300);
+                    line-height: 1.75;
+                }
+            }
+        }
+    }
+
+    // intro section
+    section.intro {
+        margin-bottom: 15rem;
+
+        @include breakpoint(mobile, md) {
+            margin-bottom: 5rem;
+        }
+
+        .section-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12rem;
+
+            @include breakpoint(mobile, lg) {
+                gap: 5rem;
+            }
+
+            @include breakpoint(mobile, md) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            figure {
+                img {
+                    position: absolute;
+                    top: 5.35rem;
+                    right: 50%;
+                    translate: 0 7rem;
+                
+                    @include breakpoint(mobile, md) {
+                        position: relative;
+                        top: unset;
+                        right: unset;
+                        translate: unset;
+                    }
+                }
+            }
+
+            article {
+                flex-direction: column;
+
+                @include breakpoint(mobile, lg, min) {
+                    width: 380px;
+                }
+
+                @include breakpoint(mobile, md) {
+                    flex-direction: row;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+
+                    .text-group {
+                        max-width: 300px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    // devices section
+    section.devices {
+        margin-bottom: 3rem;
+        .section-body {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    // tools section
+    section.tools {
+        margin-bottom: 10rem;
+        .section-header {
+            margin-bottom: 4.5rem;
+        }
+
+        .section-body {
+            article {
+                justify-content: space-around;
+                flex-wrap: wrap;
+                text-align: center;
+
+                .text-group {
+                    width: 330px;
+                    
+                    @include breakpoint(mobile, md) {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    // partners section
+    section.partners {
+        margin-bottom: 11rem;
+        .section-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3.25rem 1.25rem;
+
+            @include breakpoint(mobile, lg) {
+                justify-content: space-evenly;
+                gap: 3.25rem;
+            }
+            @include breakpoint(mobile, sm) {
+                flex-direction: column;
+                gap: 5rem;
+            }
+        }
+    }
+
+    // download section
+    section.download {
+        .section-header {
+            margin-bottom: 3rem;
+        }
+        .section-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+        }
+    }
+}

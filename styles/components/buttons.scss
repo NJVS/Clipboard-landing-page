@@ -1,0 +1,33 @@
+@use '../utils/mixins.scss' as *;
+
+.btn {
+    width: 14.125rem;
+    padding: 1rem 0 calc(1rem - 4px);
+    
+    border-radius: 50vh;
+    border-bottom: 4px solid black;
+    color: var(--c-neutral-100);
+    font-size: var(--fs-400);
+    font-weight: 600 !important;
+    text-align: center;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+    
+    &.btn-primary {
+        background-color: var(--c-cyan-400);
+        border-bottom-color: var(--c-cyan-600);
+    }
+    &.btn-secondary {
+        background-color: var(--c-blue-300);
+        border-bottom-color: var(--c-blue-600);
+    }
+
+    @include hover {
+        opacity: 0.85;
+    }
+
+    @include breakpoint(mobile, sm) {
+        width: 100%;
+    }
+}
