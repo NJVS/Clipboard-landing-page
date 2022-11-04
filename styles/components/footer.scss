@@ -36,6 +36,18 @@ footer.main-footer {
         ul.footer-nav {
             flex-grow: 1;
             columns: 4 180px;
+
+            // // Sahand Masoleh
+            // display: grid;
+            // grid-template-columns:
+            //     [first] minmax(min-content, 15ch) [second] repeat(
+            //         3,
+            //         minmax(min-content, 15ch)
+            //     )
+            //     [second-to-last] auto [last];
+            // grid-template-rows: 1fr 1fr;
+            // grid-auto-flow: column;
+
             
             @include breakpoint(mobile, md) {
                 text-align: center;
